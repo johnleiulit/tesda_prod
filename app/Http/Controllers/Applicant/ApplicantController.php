@@ -591,8 +591,8 @@ class ApplicantController extends Controller
             Storage::disk('public')->delete($application->payment_proof);
         }
         
-        // Store new payment proof
-        $path = $request->file('payment_proof')->store('payment-proofs', 'public');
+        // Store new payment proof with explicit public visibility
+        $path = $request->file('payment_proof')->storePublicly('payment-proofs', 'public');
         
         // Update application
         $application->update([
