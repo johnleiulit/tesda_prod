@@ -12,7 +12,7 @@ class AttendancePdfController extends Controller
 {
     public function generate(AssessmentBatch $assessment_batch)
     {
-        $templatePath = storage_path('app/public/forms/assessment_attendance.pdf');
+        $templatePath = resource_path('templates/assessment_attendance.pdf');
         if (!file_exists($templatePath)) {
             abort(404, 'Attendance template not found: ' . $templatePath);
         }

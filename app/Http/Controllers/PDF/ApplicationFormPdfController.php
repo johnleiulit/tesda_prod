@@ -14,7 +14,7 @@ class ApplicationFormPdfController extends Controller
 {
     public function print(Application $application)
     {
-        $templatePath = storage_path('app/public/forms/tesda_application_form.pdf');
+        $templatePath = resource_path('templates/tesda_application_form.pdf');
         if (!file_exists($templatePath)) {
             abort(404, 'TESDA template not found: ' . $templatePath);
         }

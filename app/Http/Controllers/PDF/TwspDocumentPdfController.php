@@ -20,7 +20,7 @@ class TwspDocumentPdfController extends Controller
         $twsp = $application->twspDocument;
         
         // Check if template exists
-        $templatePath = storage_path('app/public/forms/twsp_documents_template.pdf');
+        $templatePath = resource_path('templates/twsp_documents_template.pdf');
         if (!file_exists($templatePath)) {
             abort(404, 'TWSP documents template not found: ' . $templatePath);
         }
