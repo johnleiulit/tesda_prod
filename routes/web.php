@@ -17,18 +17,6 @@ use App\Http\Controllers\PDF\TwspDocumentPdfController;
 use App\Http\Controllers\PDF\AttendancePdfController;
 use App\Http\Controllers\ContactController;
 
-
-// Storage route for Railway deployment (php artisan serve doesn't handle symlinks)
-Route::get('/storage/{path}', function ($path) {
-    $filePath = storage_path('app/public/' . $path);
-    
-    if (!file_exists($filePath)) {
-        abort(404);
-    }
-    
-    return response()->file($filePath);
-})->where('path', '.*');
-
 Route::get('/', function () {
     return view('welcome');
 });
